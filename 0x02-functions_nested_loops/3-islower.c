@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _islower(int c) - main function
+ * _islower - main function
  * @c: parameter of the function
  * Return: 1 or 0
  */
