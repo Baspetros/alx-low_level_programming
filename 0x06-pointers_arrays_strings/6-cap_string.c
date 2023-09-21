@@ -1,27 +1,37 @@
 #include "main.h"
+
 /**
- * cap_string - main function
- * @str: parameter
- * Return: str
- */
+  * cap_string - The main  function
+  *
+  * @str: Function parameter of the string
+  *
+  * Return: Void.
+  */
 char *cap_string(char *str)
 {
-	int i, j;
-	char c[] = {44, 59, 46, '!', '?', '"', '(', ')', '{', '}', '\t', '\n'};
+	int count = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (str[count])
 	{
-		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 32;
-		}
-		for (j = 0; c[j] != '\0'; j++)
-		{
-			if (c[j] == str[i] && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
-			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-		}
+	while (!(str[count] >= 'a' && str[count] <= 'z'))
+		count++;
+	if (str[count - 1] == ' ' ||
+	str[count - 1] == '\t' ||
+	str[count - 1] == '\n' ||
+	str[count - 1] == ',' ||
+	str[count - 1] == ';' ||
+	str[count - 1] == '.' ||
+	str[count - 1] == '!' ||
+	str[count - 1] == '?' ||
+	str[count - 1] == '"' ||
+	str[count - 1] == '(' ||
+	str[count - 1] == ')' ||
+	str[count - 1] == '{' ||
+	str[count - 1] == '}' ||
+	count == 0)
+	str[count] -= 32;
+	count++;
 	}
 	return (str);
 }
+
